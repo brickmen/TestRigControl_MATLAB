@@ -1,4 +1,4 @@
-%3Dr Sets up the Movement and Measurement area
+%3D Set up the Movement and Measurement area
 %set to Demo for demo mode
 demoFlag = false;
 

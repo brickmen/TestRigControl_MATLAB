@@ -1,5 +1,4 @@
-% Extracts the reading from the scope, and checks data integrity will retry
-% if fails
+% Extracts the reading from the scope, and checks data integrity, will retry if it fails
 if not(isvalid(t))
     fprintf('WARNING: Scope Connection Broken, rebuilding \n')
     fclose(t);

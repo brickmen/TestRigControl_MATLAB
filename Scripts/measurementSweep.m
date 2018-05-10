@@ -1,4 +1,4 @@
-%3Dr Sweep logic and the reporting to console
+%3D Sweep logic and recording and reporting to console
 ux_wb_msg = [ 'Measurement In Progress '];
 ux_wb = waitbar(0,ux_wb_msg );
 tic

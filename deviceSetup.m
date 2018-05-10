@@ -14,5 +14,6 @@ run('LaserAxe MATLAB\setup');
 addpath('.\Plotting\');
 plotSetup;
 
+addpath('.\Scripts\');
 
 

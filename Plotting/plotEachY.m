@@ -1,4 +1,4 @@
-% %DISABLED Plots the surface display at the end of rows
+% Plots the surface display at the end of rows
 [X,Y] = meshgrid(x_range_start:5:x_range_end,y_range_start:5:y_range_end);
 
 resultsSoFar = results(1:runIndex,:);
@@ -25,15 +25,17 @@ plotValues2 = resultsSoFar(resultsSoFar(:,3)==z_range_start,:);
 
 
 Z_Ch4=griddata(plotValues(:,1),plotValues(:,2),[plotValues(:,6)+plotValues(:,7)],X,Y);
-contourf(ax4, X, Y,Z_Ch4)
-caxis(ax4,[0 10])
+contourf(ax4, X, Y,Z_Ch4,8)
+%caxis(ax4,[0 10])
 title(ax4,['[' demoText '] Voltage Contour, both coils, Z Max'])
 xlabel(ax4,'Slide (X) Position')
 ylabel(ax4,'Offset (Y) Position')
+colorbar(ax4,'eastoutside')
 
 Z_Ch3=griddata(plotValues2(:,1),plotValues2(:,2),[plotValues2(:,6)+plotValues2(:,7)],X,Y);
-contourf(ax2, X, Y,Z_Ch3)
-caxis(ax2,[0 10])
+contourf(ax2, X, Y,Z_Ch3, 8)
+%caxis(ax2,[0 10])
 title(ax2,['[' demoText '] Voltage Contour, both coils, Z Min'])
 xlabel(ax2,'Slide (X) Position')
 ylabel(ax2,'Offset (Y) Position')
+colorbar(ax2,'eastoutside')

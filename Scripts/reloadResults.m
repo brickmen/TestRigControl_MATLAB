@@ -1,8 +1,8 @@
-%Loads up previously completed results
+%Loads up previously completed results and recreates plots input <results>
 
 %Open Results file
 addpath('.\Results\');
-load('backup_16-02-18_09-21.mat')
+
 %remove any zero rows
 results = results(any(results,2),:);
 

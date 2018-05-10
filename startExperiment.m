@@ -1,4 +1,4 @@
-%3Dr Use this script setup and run experiement from a clean startup
+%3Dr Use this script setup and run experiment from a clean startup post device setup
 fprintf('****Experiment Starting**** \n')
 
 if exist('serialobject') == 0

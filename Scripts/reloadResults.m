@@ -1,11 +1,10 @@
 %Loads up previously completed results and recreates plots input <results>
 
-%Open Results file
-addpath('.\Results\');
-
 %remove any zero rows
-results = results(any(results,2),:);
+%results = results(any(results,2),:);
 
+runIndex = length(results);
+total_points = length(results);
 %Is it a demo?
 demoFlag = true;
 
@@ -33,6 +32,8 @@ fprintf('Range [points]  Z:%4.2f to %4.2f [ %4.2f ]  \n', z_range_start,z_range_
 fprintf('Read   %i of expected %i   \n', runIndex, total_points )
 if runIndex == total_points
     fprintf('     YAY its a complete data set :) !\n' )
+else
+    fprintf('     Note: This is not a complete data set :( !\n' )
 end
 
 

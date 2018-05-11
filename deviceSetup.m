@@ -1,5 +1,8 @@
 %3Dr Clears everything and sets up the Laseraxe and Oscilloscope
-clear
+if exist('serialobject') == 1
+    deviceFinish;
+end
+
 instrreset
 demoFlag=false;
 
@@ -11,9 +14,6 @@ oscilloscopeSetup;
 addpath('.\LaserAxe MATLAB\');
 run('LaserAxe MATLAB\setup');
 
-addpath('.\Plotting\');
-plotSetup;
 
-addpath('.\Scripts\');
 
 

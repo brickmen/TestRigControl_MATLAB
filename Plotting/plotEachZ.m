@@ -13,4 +13,5 @@ zlabel(ax1, 'Volts RMS')
 %legend(ax1,'src-pickup','src-rectifier')
 grid(ax1,'on')
 grid(ax1,'minor')
+
 %view(ax1,[175,25])

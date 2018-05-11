@@ -95,11 +95,12 @@ while not(contains(state,'<Idle'))
     fprintf(serialobject,"%s","?");
     pause(.10);
     state  = fscanf(serialobject);
-    fprintf('Moving, details %s \n', state)
+    % Enable this to get verbose position updates to screen
+    % fprintf('Moving, details %s \n', state)
 end
 
 x_now = x_pos;
 y_now = y_pos;
 z_now = z_pos;
-%Report Positioned
-fprintf('Positioned at X %4.1f , Y %4.1f , Z %4.1f \n',x_now, y_now, z_now)
+% Optional Report Position
+%fprintf('Positioned at X %4.1f , Y %4.1f , Z %4.1f \n',x_now, y_now, z_now)

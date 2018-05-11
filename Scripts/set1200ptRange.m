@@ -6,9 +6,10 @@ y_range_end = 60;
 z_range_start = 0;
 z_range_end = 50;
 % %Define Resolution
-x_step = 2; %mm
-y_step = 2; %mm
-z_step = 10; %mm
+% Define Number of Measurements
+x_total_points = 19 + 1; %plus one for both end readings
+y_total_points = 19 + 1;
+z_total_points = 2 + 1;
 % Set Correct Flag
-defineByResolution = 1;
+defineByResolution = 0;
 

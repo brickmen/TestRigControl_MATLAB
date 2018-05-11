@@ -65,8 +65,8 @@ function h = buildwaitbar(X,message)
         screenheight = screensize(4);      % User's screen height
 
     % 1.2 - Define the waitbar position
-        winwidth = 300;           % Width of timebar window
-        winheight = 85;           % Height of timebar window
+        winwidth = 400;           % Width of timebar window
+        winheight = 95;           % Height of timebar window
         winpos = [0.5*(screenwidth-winwidth), ...
             0.5*(screenheight-winheight), winwidth, winheight];  % Position
                                                             
@@ -108,12 +108,12 @@ function h = buildwaitbar(X,message)
                                  
     % 2.7 - Build percent progress textbox
     userdata.percent = uicontrol(h,'style','text','hor','right',...     
-        'pos',[winwidth-35 winheight-52 28 20],'string','',...                                       
+        'pos',[winwidth-60 winheight-52 42 20],'string','',...                                       
         'backgroundcolor',wincolor);                                      
     
     % 2.8 - Build progress bar axis
     userdata.axes = axes('parent',h,'units','pixels','xlim',[0 1],...                                
-        'pos',[10 winheight-45 winwidth-50 15],'box','on',...                                     
+        'pos',[10 winheight-45 winwidth-75 15],'box','on',...                                     
         'color',[1 1 1],'xtick',[],'ytick',[]);                             
     
 % 3 - INITILIZE THE PROGESS BAR
@@ -154,8 +154,8 @@ function updatewaitbar(h,progress,message)
 
     % 2.2 - Calculate the estimated time remaining
         sec_remain = elap*(1/progress-1);
-        e_mes = datestr(elap/86400,'DD-HH:MM:SS');
-        r_mes = datestr(sec_remain/86400,'DD-HH:MM:SS');
+        e_mes = datestr(elap/86400,'DD HH:MM:SS');
+        r_mes = datestr(sec_remain/86400,'DD HH:MM:SS');
 
     % 2.3 - Produce error if progress is > 1
         if progress > 1; r_mes = 'Error, progress > 1'; end
@@ -165,8 +165,8 @@ function updatewaitbar(h,progress,message)
         set(userdata.remain,'string',r_mes); % Update remaining time string   
         set(userdata.elapse,'string',e_mes); % Update elapsed time string                
         set(userdata.percent,'string',...                   
-            num2str((100*progress),4)); % Update progress %
-        set(h,'Name',[num2str(floor(100*progress)),...
+            [num2str((100*progress),4) ' %']); % Update progress %
+        set(h,'Name',[num2str((100*progress),3),...
             '% Complete']); % Update figure name
        
     end

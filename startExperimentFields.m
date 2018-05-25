@@ -12,13 +12,13 @@ if exist('serialobject') == 0
 end
 
 %Define Working Area
-setExtendedRange;
+setVeryFastRange;
 % Setup Measurements
 measurementSetup;
 
 %x_pos = 650; y_pos = 50; z_pos = 0; movetoXY
 %y_start = 3;
 
-measurementSweep;
+measurementSweepFields;
 
 fprintf('****Experiment complete**** \n')

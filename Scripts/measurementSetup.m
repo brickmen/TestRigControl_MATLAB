@@ -1,9 +1,9 @@
 %3D Set up the Movement and Measurement area
 %set to Demo for demo mode
-demoFlag = false;
 
-%Define Working Area
-setExtendedRange;
+
+
+demoFlag = false;
 % Get total Sample Points
 calcSamplePoints;
 % Display to Console
